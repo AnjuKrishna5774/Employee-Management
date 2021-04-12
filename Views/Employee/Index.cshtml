@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Employee_Management_System.Models.EmployeeModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<p>
+    <a asp-action="Create">Register New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.empl_id)
+            </th>*@
+            <th>
+                FIRST NAME
+            </th>
+            <th>
+                LAST NAME
+            </th>
+            <th>
+                EMAIL
+            </th>
+            <th>
+               DATE OF BIRTH
+            </th>
+            <th>
+                GENDER
+            </th>
+            @*<th>
+                PASSWORD
+            </th>
+            <th>
+               CONFIRM PASSWORD
+            </th>
+            <th>*@@*</th>*@
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.empl_id)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.empl_fst_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empl_lst_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empl_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empl_dob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empl_gender)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.empl_password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empl_confirm_password)
+            </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.empl_id  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.empl_id }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.empl_id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

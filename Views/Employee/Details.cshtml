@@ -1,0 +1,54 @@
+﻿@model Employee_Management_System.Models.EmployeeModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div>
+   
+    <dl class="row">
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.empl_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.empl_id)
+        </dd>*@
+        <dt class = "col-sm-2">
+            FIRST NAME
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.empl_fst_name)
+        </dd>
+        <dt class = "col-sm-2">
+           LAST NAME
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.empl_lst_name)
+        </dd>
+        <dt class = "col-sm-2">
+           EMAIL
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.empl_email)
+        </dd>
+        <dt class = "col-sm-2">
+           DATE OF BIRTH
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.empl_dob)
+        </dd>
+        <dt class = "col-sm-2">
+           GENDER
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.empl_gender)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.empl_id}) |
+    <a asp-action="Index">Back to Employee List</a>
+</div>
